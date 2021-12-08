@@ -1,58 +1,20 @@
 import React ,{ useState, useMemo } from 'react';
-import { 
-  Text, 
-  View , 
-  StyleSheet, 
-  TextInput, 
-  Button, 
-  ScrollView,
-  SafeAreaView,
-  RefreshControl,
-} from 'react-native';
+import TextInputReview from './components/TextInputReview'
+import ImageWithTextInput from './components/ImageWithTextInput'
+import ButtonExample from './components/ButtonExample'
+import TextInputPractice1 from './components/TextInputPractice1'
+import TouchableExample from './components/TouchableExample'
+import TouchablePractice from './components/TouchablePactice'
 
 const App = () => {
-  
-  const [inputValue, setInputValue] = useState('');
-  const checkValueIsNumberOrNot =  () =>{
-    if(isNaN(inputValue)){
-      alert("It is not a Number");
-    }
-    else{
-      alert("It is a number");
-    }
-  }
-
   return(
-    <SafeAreaView style={{flex:1}}>
-      <View style={styles.container}>
-        <TextInput
-          placeholder = "Enter Text"
-          style = {styles.textInputStyle}
-          onChangeText = {(inputValue) => {setInputValue(inputValue)}}
-        />
-        <Button 
-          title = "Check Value is number or Not"
-          onPress = {checkValueIsNumberOrNot}
-        />
-      </View>      
-    </SafeAreaView>
+    // <TextInputReview/>
+    // <ImageWithTextInput/>
+    // <ButtonExample/>
+    // <TextInputPractice1/>
+    // <TouchableExample/>
+    <TouchablePractice/>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems:'center',
-    marginTop:60
-  },
-  textInputStyle: {
-    textAlign: 'center',
-    height: 50,
-    width: '70%',
-    margin: 12,
-    borderColor: 'black',
-    marginBottom: 10,
-  },
-});
 
 export default App;
