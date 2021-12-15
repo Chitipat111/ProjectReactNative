@@ -1,20 +1,13 @@
-import React ,{ useState, useMemo } from 'react';
-import TextInputReview from './components/TextInputReview'
-import ImageWithTextInput from './components/ImageWithTextInput'
-import ButtonExample from './components/ButtonExample'
-import TextInputPractice1 from './components/TextInputPractice1'
-import TouchableExample from './components/TouchableExample'
-import TouchablePractice from './components/TouchablePactice'
+import React from 'react'
+import { View, Text, Modal } from 'react-native'
+import AlertExample from './Components/W4/AlertExample'
+import ModalExample from './Components/W4/ModalExample'
 
 const App = () => {
-  return(
-    // <TextInputReview/>
-    // <ImageWithTextInput/>
-    // <ButtonExample/>
-    // <TextInputPractice1/>
-    // <TouchableExample/>
-    <TouchablePractice/>
-  );
-};
+  return (
+    // <AlertExample/>
+    <ModalExample/>
+  )
+}
 
-export default App;
+export default App
