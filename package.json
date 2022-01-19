@@ -1,0 +1,19 @@
+//เพคเกจผมจะไม่เหมือนคนอื่น ๆ เนื่องจากผมเขียนผ่าน editor บนเว็บไซต์ครับ
+
+{
+  "dependencies": {
+    "expo-constants": "~12.1.3",
+    "@expo/vector-icons": "^12.0.0",
+    "react-native-paper": "4.9.2",
+    "react-native-screens": "~3.8.0",
+    "react-native-webview": "11.13.0",
+    "@react-navigation/stack": "*",
+    "@react-navigation/native": "*",
+    "react-native-vector-icons": "9.0.0",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-safe-area-context": "3.3.2",
+    "react-navigation-header-buttons": "*",
+    "react-native-vector-icons/Ionicons": "*",
+    "@react-navigation/native-stack": "*"
+  }
+}
