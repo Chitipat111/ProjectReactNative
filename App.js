@@ -7,7 +7,7 @@ import FirstPage from './pages/FirstPage'
 import SecondPage from './pages/SecondPage';
 import ThirdPage from './pages/ThirdPage';
 
-// Part1 + Part2
+import CustomSidebarMenu from './pages/CustomSidebarMenu'
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,7 +19,7 @@ const NavigationDrawerStructure = (props)=> {
   return (
     <View style={{flexDirection:'row'}}>
       <TouchableOpacity onPress={()=>toggleDrawer()}>
-        <Image source={require('./assets/1260667.png')} style={{width:25,height:25,marginLeft:5}} />
+        <Image source={require('./assets/menu_icon_white.png')} style={{width:25,height:25,marginLeft:5}} />
       </TouchableOpacity>
     </View>
   )
@@ -59,7 +59,9 @@ function secondScreenStack({navigation}){
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator screenOptions={{headerShown: false}}>        
+      <Drawer.Navigator screenOptions={{headerShown: false}}
+        drawerContent = {(props) => <CustomSidebarMenu {...props}/>}
+      >
         <Drawer.Screen name ="FirstPage" component={firstScreenStack} />
         <Drawer.Screen name ="SecondPage" component={secondScreenStack} />
       </Drawer.Navigator>
@@ -69,61 +71,60 @@ const App = () => {
 
 export default App;
 
-
-//Part1
-
-// const Stack = createNativeStackNavigator();
-
-// const App = () => {
-//   return(
-//     <NavigationContainer>
-//       <Stack.Navigator initiaRouteName='FirstPage'
-//       screenOptions={{
-//         headerStyle:{backgroundColor:'#32C6E6'},
-//         headerTintColor:'#fff',
-//         headerTitleStyle:{fontWeight:'bold'}
-//       }}
-//       >
-//         <Stack.Screen name='FirstPage' component={FirstPage} option={{title:'Fist Page'}}/>
-//         <Stack.Screen name='SecondPage' component={SecondPage} option={{title:'Second Page'}}/>
-//         <Stack.Screen name='ThirdPage' component={ThirdPage} option={{title:'Third Page'}}/>
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   )
-// }
-
-// export default App;
-
 //Part2
-// function HomeScreen({navigation}){
-//   return(
-//     <View style={{flex:1, alignItem:'center', justifyContent:'center'}}>
-//       <Button title='Notifications' onPress={()=>navigation.navigate('Notifications')}></Button>
+// import * as React from 'react';
+// import { Text, View } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+
+// function HomeScreen() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Home!</Text>
 //     </View>
-//   )
+//   );
 // }
 
-// function NotificationScreen({navigation}){
-//   return(
-//     <View style={{flex:1, alignItem:'center', justifyContent:'center'}}>
-//       <Button title='Back to Home' onPress={()=>navigation.goBack()}></Button>
+// function SettingsScreen() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Settings!</Text>
 //     </View>
-//   )
+//   );
 // }
 
-// const Drawer = createDrawerNavigator();
+// const Tab = createBottomTabNavigator();
 
-// const App = () => {
+// export default function App() {
 //   return (
 //     <NavigationContainer>
-//       <Drawer.Navigator initialRouteName='Home'>
-//         <Drawer.Screen name='Home' component={HomeScreen}/>
-//         <Drawer.Screen name='Notifications' component={NotificationScreen}/>
-//       </Drawer.Navigator>
+//       <Tab.Navigator
+//         screenOptions={({ route }) => ({
+//           tabBarIcon: ({ focused, color }) => {
+//             let iconName;
+
+//             if (route.name === 'Home') {
+//               iconName = focused
+//                 ? 'ios-information-circle'
+//                 : 'ios-information-circle-outline';
+//             } else if (route.name === 'Settings') {
+//               iconName = focused ? 'ios-list-box' : 'ios-list';
+//             }
+//             return <Ionicons name={iconName} color={color} />;
+//           },
+//           // tabBarActiveTintColor: '#32C6E6',
+//           // tabBarInactiveTintColor: 'gray',
+//         })}
+//         tabBarOptions = {{
+//           activeTintColor: '#32C6E6',
+//           inactiveTintColor: 'gray',
+//         }}
+//       >
+//         <Tab.Screen name="Home" component={HomeScreen} />
+//         <Tab.Screen name="Settings" component={SettingsScreen} />
+//       </Tab.Navigator>
 //     </NavigationContainer>
 //   );
-// };
-
-// export default App;
-
-
+// }
