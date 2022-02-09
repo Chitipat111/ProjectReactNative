@@ -4,13 +4,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-// import { NativeBaseProvider, Box } from "native-base";
-
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import DetailScreen from './screens/DetailScreen';
 import MenuScreen from './screens/MenuScreen';
 import AboutScreen from './screens/AboutScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 
 const Stack = createStackNavigator();
@@ -29,10 +28,15 @@ function HomeStack() {
         component={HomeScreen}
         options={{title: 'หน้าหลัก'}}
       />
-        <Stack.Screen
-        name="ProductScreen"
-        component={ProductScreen}
+      <Stack.Screen
+        name="AboutScreen"
+        component={AboutScreen}
         options={{title: 'สินค้า'}}
+      />
+      <Stack.Screen
+        name="RegisterScreen"
+        component={RegisterScreen}
+        options={{title: 'ลงทะเบียน'}}
       />
     </Stack.Navigator>
   );
