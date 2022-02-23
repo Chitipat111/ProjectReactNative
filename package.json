@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "yup": "^0.32.11",
+    "axios": "^0.25.0",
+    "formik": "^2.2.9",
     "native-base": "2",
     "@types/react": "*",
     "expo-constants": "~12.1.3",
