@@ -10,6 +10,7 @@ import DetailScreen from './screens/DetailScreen';
 import MenuScreen from './screens/MenuScreen';
 import AboutScreen from './screens/AboutScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import LoginScreen from './screens/LoginScreen';
 
 
 const Stack = createStackNavigator();
@@ -37,6 +38,11 @@ function HomeStack() {
         name="RegisterScreen"
         component={RegisterScreen}
         options={{title: 'ลงทะเบียน'}}
+      />      
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{title: 'เข้าสู่ระบบ'}}
       />
     </Stack.Navigator>
   );
@@ -55,7 +61,7 @@ function ProductStack() {
         component={ProductScreen}
         options={{title: 'สินค้า'}}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="DetailScreen"
         component={DetailScreen}
         options={{title: 'รายละเอียด'}}
